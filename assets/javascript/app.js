@@ -1,6 +1,12 @@
 // Hayao Miyazaki
 // What was Miyazaki's first feature length film?
 // answer: The Castle of Cagliostro
+// Which Miyazaki film won Best Picture at the Academy Awards?
+// answer: Spirited Away
+// What year did Miyazaki begin his animation career?
+// answer: 1963
+// What other form of art is Miyazaki passionate about?
+// answer: manga
 
 // First page begins with a 'start' button
 // Name of the game on the first page
@@ -18,25 +24,26 @@
 // ...and Unanswered
 
 // use .hide() and .show() for each "page"?
-var timeLeft = 10;
+var timeLeft = 60;
 
 $(document).ready(function() {
     // Trivia questions are hidden upon first page load
     $('.all-questions').hide();
+    $('.count-down').hide();
 
     // Function for when the user clicks the 'start' button
     $('.start-button').click(function() {
         // 'Start' button is now hidden and trivia is shown
-        $('button').hide();
-        $('.all-questions').show();
+        $('button').fadeOut(500);
+        $('.all-questions').fadeIn(1000);
+        $('.count-down').fadeIn(1000);
         // 'Counter' starts on click and counts down
-
             var countDown = setInterval(function() {
                 $('.count-down').text("TIME REMAINING :" + timeLeft--);
                 if (timeLeft === 0) {
                     clearInterval(countDown);
-                    $('.all-questions').hide();
-                    $('.count-down').hide();
+                    $('.all-questions').fadeOut(1000);
+                    $('.count-down').fadeOut(1000);
                 }
             }, 1000);
     });

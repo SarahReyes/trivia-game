@@ -17,7 +17,7 @@ font-family: 'Heebo', sans-serif;*/
   height: 800px;
 }
 .title h1 {
-  margin-left: 28px;
+  text-align: center;
   margin-top: 20px;
 }
 button {
@@ -28,6 +28,7 @@ button {
   letter-spacing: 2px;
   border-radius: 150px;
   border: none;
+  outline: none;
   color: white;
   background-color: black;
   position: absolute;
@@ -45,16 +46,17 @@ button {
   z-index: 5;
   left: 0;
   right: 0;
-  margin-left: 370px;
+  margin-left: 360px;
   margin-top: 140px;
 }
 .all-questions {
+  display: inline;
   position: absolute;
   z-index: 5;
   left: 0;
   right: 0;
   background-color: gray;
-  background: rgba(60, 25, 25, .5);
+  background: rgba(40, 25, 25, .75);
   border-radius: 10px;
   height: 500px;
   width: 800px;
@@ -62,13 +64,15 @@ button {
   margin-top: 225px;
   font-family: 'Heebo', sans-serif;
   color: white;
-  font-size: 24px;
   letter-spacing: 1px;
 
 }
-.answer-options {
-  font-size: 18px;
-  margin-left: 50px;
-  margin-top: 225px;
-
+.questionOne {
+  font-size: 24px;
+  margin-top: 20px;
+  text-align: center;
+}
+.q-one-answer-options {
+  margin-top: 10px;
+  text-align: center;
 }
