@@ -1,4 +1,4 @@
-// Hayao Miyazaki
+// Hayao Miyazaki Trivia
 // What was Miyazaki's first feature length film?
 // answer: The Castle of Cagliostro
 // Which Miyazaki film won Best Picture at the Academy Awards?
@@ -8,15 +8,6 @@
 // What other form of art is Miyazaki passionate about?
 // answer: manga
 
-// First page begins with a 'start' button
-// Name of the game on the first page
-// User will click the start button and it fades to the next 'page'
-// Once the user clicks 'start', it starts a timer on the next page
-// The timer starts counting down when the 'start' button is clicked
-// There is a question displayed on the screen
-// There are multiple choice answers, in individual buttons
-// The user clicks on a button to choose their answer
-// The user can only click one button option
 // The computer records the user click as true or false
 // The computer increments or decrements if they got it true or false
 // When the timer hits 0, the page switches
@@ -25,11 +16,14 @@
 
 // use .hide() and .show() for each "page"?
 var timeLeft = 60;
+var correctAnswers = 0;
+var incorrectAnswers = 0;
 
 $(document).ready(function() {
     // Trivia questions are hidden upon first page load
     $('.all-questions').hide();
     $('.count-down').hide();
+    $('.answers-page').hide();
 
     // Function for when the user clicks the 'start' button
     $('.start-button').click(function() {
@@ -42,9 +36,28 @@ $(document).ready(function() {
                 $('.count-down').text("TIME REMAINING :" + timeLeft--);
                 if (timeLeft === 0) {
                     clearInterval(countDown);
+                    // Questions elements fade out and answers fade in
                     $('.all-questions').fadeOut(1000);
                     $('.count-down').fadeOut(1000);
+                    $('.answers-page').fadeIn(1000);
                 }
             }, 1000);
+        // User clicks their answer and it's value is returned
+        $('.q-one-answer-options').click(function() {
+            var questionOneValue = $('input[name="q1"]:checked').val();
+            if (questionOneValue === "1963") {
+                correctAnswers++;
+                console.log(correctAnswers);
+            }
+            else {
+                incorrectAnswers++;
+                console.log(incorrectAnswers);
+            }
+
+
+        });
+        // var questionTwoValue = $('input[name="q2"]:checked').val();
+        // var questionThreeValue = $('input[name="q3"]:checked').val();
+        // var questionsFourValue = $('input[name="q4"]:checked').val();
     });
 });
