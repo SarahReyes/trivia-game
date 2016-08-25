@@ -15,7 +15,7 @@
 // ...and Unanswered
 
 // use .hide() and .show() for each "page"?
-var timeLeft = 60;
+var timeLeft = 3;
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 
@@ -24,6 +24,7 @@ $(document).ready(function() {
     $('.all-questions').hide();
     $('.count-down').hide();
     $('.answers-page').hide();
+    $('.times-up').hide();
 
     // Function for when the user clicks the 'start' button
     $('.start-button').click(function() {
@@ -40,22 +41,24 @@ $(document).ready(function() {
                     $('.all-questions').fadeOut(1000);
                     $('.count-down').fadeOut(1000);
                     $('.answers-page').fadeIn(1000);
+                    $('.times-up').fadeIn(1000);
                 }
+                // User clicks their answer and it's value is returned
+                $('.q-one-answer-options').click(function() {
+                    var questionOneValue = $('input[name="q1"]:checked').val();
+                    if (questionOneValue === "1963") {
+                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers++);
+                        console.log(correctAnswers);
+                    }
+                    else {
+                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers++);
+                        console.log(incorrectAnswers);
+                    }
+                });
             }, 1000);
-        // User clicks their answer and it's value is returned
-        $('.q-one-answer-options').click(function() {
-            var questionOneValue = $('input[name="q1"]:checked').val();
-            if (questionOneValue === "1963") {
-                correctAnswers++;
-                console.log(correctAnswers);
-            }
-            else {
-                incorrectAnswers++;
-                console.log(incorrectAnswers);
-            }
 
 
-        });
+
         // var questionTwoValue = $('input[name="q2"]:checked').val();
         // var questionThreeValue = $('input[name="q3"]:checked').val();
         // var questionsFourValue = $('input[name="q4"]:checked').val();
