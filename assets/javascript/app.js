@@ -8,16 +8,11 @@
 // What other form of art is Miyazaki passionate about?
 // answer: manga
 
-// The computer records the user click as true or false
-// The computer increments or decrements if they got it true or false
-// When the timer hits 0, the page switches
-// The page shown after the timer ends has Correct Answers, Incorrect Answers,..
-// ...and Unanswered
 
 // use .hide() and .show() for each "page"?
-var timeLeft = 3;
-var correctAnswers = 0;
-var incorrectAnswers = 0;
+var timeLeft = 10;
+var correctAnswers = [];
+var incorrectAnswers = [];
 
 $(document).ready(function() {
     // Trivia questions are hidden upon first page load
@@ -46,13 +41,15 @@ $(document).ready(function() {
                 // User clicks their answer and it's value is returned
                 $('.q-one-answer-options').click(function() {
                     var questionOneValue = $('input[name="q1"]:checked').val();
-                    if (questionOneValue === "1963") {
-                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers++);
-                        console.log(correctAnswers);
+                    if (questionOneValue === "1963" && correctAnswers.indexOf("q1") < 0) {
+                        correctAnswers.push("q1");
+                        incorrectAnswers.delete("q1");
+                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
                     }
-                    else {
-                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers++);
-                        console.log(incorrectAnswers);
+                    else if (questionOneValue !== "1963" && incorrectAnswers.indexOf("q1") < 0) {
+                        incorrectAnswers.push("q1");
+                        correctAnswers.delete("q1");
+                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
                 });
             }, 1000);
