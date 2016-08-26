@@ -10,7 +10,7 @@
 
 
 // use .hide() and .show() for each "page"?
-var timeLeft = 15;
+var timeLeft = 45;
 var correctAnswers = [];
 var incorrectAnswers = [];
 
@@ -97,6 +97,74 @@ $(document).ready(function() {
                         incorrectAnswers.push("q2");
                         // check the index of q1, add that value to a new variable
                         var correctIndex = correctAnswers.indexOf("q2");
+                        // making sure there aren't duplicate wrong answers
+                        if (correctIndex >= 0) {
+                            correctAnswers.splice(correctIndex, 1);
+                        }
+                        // array lengths are checked and added to the div
+                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                    }
+                });
+                // User clicks their answer and it's value is returned
+                $('.q-three-answer-options').click(function() {
+                    // checks the value of the input click
+                    var questionThreeValue = $('input[name="q3"]:checked').val();
+                    // if the user clicked the correct answer it adds it to an empty array
+                    if (questionThreeValue === "Spirited Away" && correctAnswers.indexOf("q3") < 0) {
+                        // correct answer pushed to correctAnswers empty array
+                        correctAnswers.push("q3");
+                        // check the index of q1, add that value to a new variable
+                        var incorrectIndex = incorrectAnswers.indexOf("q3");
+                        // if the index of q1 isn't there, it's -1, so check if incorrectIndex
+                        // is greater than 0, and delete it if it is.
+                        if (incorrectIndex >= 0) {
+                            incorrectAnswers.splice(incorrectIndex, 1);
+                        }
+                        // array lengths are checked and added to the div
+                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                    }
+                    // if the user clicks the wrong answer it adds it to a separate empty array
+                    else if (questionThreeValue !== "Spirited Away" && incorrectAnswers.indexOf("q3") < 0) {
+                        // incorrect click is pushed to the incorrectAnswers array
+                        incorrectAnswers.push("q3");
+                        // check the index of q1, add that value to a new variable
+                        var correctIndex = correctAnswers.indexOf("q3");
+                        // making sure there aren't duplicate wrong answers
+                        if (correctIndex >= 0) {
+                            correctAnswers.splice(correctIndex, 1);
+                        }
+                        // array lengths are checked and added to the div
+                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                    }
+                });
+                // User clicks their answer and it's value is returned
+                $('.q-four-answer-options').click(function() {
+                    // checks the value of the input click
+                    var questionFourValue = $('input[name="q4"]:checked').val();
+                    // if the user clicked the correct answer it adds it to an empty array
+                    if (questionFourValue === "Manga" && correctAnswers.indexOf("q4") < 0) {
+                        // correct answer pushed to correctAnswers empty array
+                        correctAnswers.push("q4");
+                        // check the index of q4, add that value to a new variable
+                        var incorrectIndex = incorrectAnswers.indexOf("q4");
+                        // if the index of q4 isn't there, it's -1, so check if incorrectIndex
+                        // is greater than 0, and delete it if it is.
+                        if (incorrectIndex >= 0) {
+                            incorrectAnswers.splice(incorrectIndex, 1);
+                        }
+                        // array lengths are checked and added to the div
+                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                    }
+                    // if the user clicks the wrong answer it adds it to a separate empty array
+                    else if (questionFourValue !== "Manga" && incorrectAnswers.indexOf("q4") < 0) {
+                        // incorrect click is pushed to the incorrectAnswers array
+                        incorrectAnswers.push("q4");
+                        // check the index of q4, add that value to a new variable
+                        var correctIndex = correctAnswers.indexOf("q4");
                         // making sure there aren't duplicate wrong answers
                         if (correctIndex >= 0) {
                             correctAnswers.splice(correctIndex, 1);

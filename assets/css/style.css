@@ -40,6 +40,10 @@ button {
   margin-left: 300px;
   margin-top: 300px;
 }
+input {
+  margin-left: 15px;
+  margin-right: 5px;
+}
 .count-down {
   font-family: 'Candal', sans-serif;
   font-size: 50px;
@@ -67,37 +71,43 @@ button {
   font-family: 'Heebo', sans-serif;
   color: white;
   letter-spacing: 1px;
-  text-align: center;
   font-size: 24px;
-
 }
 .question-one {
   margin-top: 50px;
+  text-align: center;
 }
 .q-one-answer-options {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 18px;
+  margin-left: 240px;
 }
 .question-two {
   margin-top: 50px;
+  text-align: center;
 }
 .q-two-answer-options {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 18px;
+  margin-left: 16px;
 }
 .question-three {
   margin-top: 50px;
+  text-align: center;
 }
 .q-three-answer-options {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 18px;
+  margin-left: 16px;
 }
 .question-four {
   margin-top: 50px;
+  text-align: center;
 }
 .q-four-answer-options {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 18px;
+  margin-left: 175px;
 }
 .answers-page {
   position: absolute;
