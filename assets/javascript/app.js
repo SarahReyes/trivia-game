@@ -10,7 +10,7 @@
 
 
 // use .hide() and .show() for each "page"?
-var timeLeft = 10;
+var timeLeft = 15;
 var correctAnswers = [];
 var incorrectAnswers = [];
 
@@ -50,10 +50,9 @@ $(document).ready(function() {
                         var incorrectIndex = incorrectAnswers.indexOf("q1");
                         // if the index of q1 isn't there, it's -1, so check if incorrectIndex
                         // is greater than 0, and delete it if it is.
-                        if (incorrectIndex > 0) {
+                        if (incorrectIndex >= 0) {
                             incorrectAnswers.splice(incorrectIndex, 1);
                         }
-
                         // array lengths are checked and added to the div
                         $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
                         $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
@@ -62,13 +61,18 @@ $(document).ready(function() {
                     else if (questionOneValue !== "1963" && incorrectAnswers.indexOf("q1") < 0) {
                         // incorrect click is pushed to the incorrectAnswers array
                         incorrectAnswers.push("q1");
-                        // correct click is removed from the correctAnswers array
-                        correctAnswers.splice("q1");
+                        // check the index of q1, add that value to a new variable
+                        var correctIndex = correctAnswers.indexOf("q1");
+                        // making sure there aren't duplicate wrong answers
+                        if (correctIndex >= 0) {
+                            correctAnswers.splice(correctIndex, 1);
+                        }
                         // array lengths are checked and added to the div
                         $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
                         $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
                 });
+                // User clicks their answer and it's value is returned
                 $('.q-two-answer-options').click(function() {
                     // checks the value of the input click
                     var questionTwoValue = $('input[name="q2"]:checked').val();
@@ -76,8 +80,13 @@ $(document).ready(function() {
                     if (questionTwoValue === "The Castle of Cagliostro" && correctAnswers.indexOf("q2") < 0) {
                         // correct answer pushed to correctAnswers empty array
                         correctAnswers.push("q2");
-                        // incorrect click is removed from the incorrectAnswers array
-                        incorrectAnswers.splice("q2");
+                        // check the index of q1, add that value to a new variable
+                        var incorrectIndex = incorrectAnswers.indexOf("q2");
+                        // if the index of q1 isn't there, it's -1, so check if incorrectIndex
+                        // is greater than 0, and delete it if it is.
+                        if (incorrectIndex >= 0) {
+                            incorrectAnswers.splice(incorrectIndex, 1);
+                        }
                         // array lengths are checked and added to the div
                         $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
                         $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
@@ -86,19 +95,17 @@ $(document).ready(function() {
                     else if (questionTwoValue !== "The Castle of Cagliostro" && incorrectAnswers.indexOf("q2") < 0) {
                         // incorrect click is pushed to the incorrectAnswers array
                         incorrectAnswers.push("q2");
-                        // correct click is removed from the correctAnswers array
-                        correctAnswers.splice("q2");
+                        // check the index of q1, add that value to a new variable
+                        var correctIndex = correctAnswers.indexOf("q2");
+                        // making sure there aren't duplicate wrong answers
+                        if (correctIndex >= 0) {
+                            correctAnswers.splice(correctIndex, 1);
+                        }
                         // array lengths are checked and added to the div
                         $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
                         $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
                 });
             }, 1000);
-
-
-
-        // var questionTwoValue = $('input[name="q2"]:checked').val();
-        // var questionThreeValue = $('input[name="q3"]:checked').val();
-        // var questionsFourValue = $('input[name="q4"]:checked').val();
     });
 });
