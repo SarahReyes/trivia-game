@@ -40,15 +40,56 @@ $(document).ready(function() {
                 }
                 // User clicks their answer and it's value is returned
                 $('.q-one-answer-options').click(function() {
+                    // checks the value of the input click
                     var questionOneValue = $('input[name="q1"]:checked').val();
+                    // if the user clicked the correct answer it adds it to an empty array
                     if (questionOneValue === "1963" && correctAnswers.indexOf("q1") < 0) {
+                        // correct answer pushed to correctAnswers empty array
                         correctAnswers.push("q1");
-                        incorrectAnswers.delete("q1");
+                        // check the index of q1, add that value to a new variable
+                        var incorrectIndex = incorrectAnswers.indexOf("q1");
+                        // if the index of q1 isn't there, it's -1, so check if incorrectIndex
+                        // is greater than 0, and delete it if it is.
+                        if (incorrectIndex > 0) {
+                            incorrectAnswers.splice(incorrectIndex, 1);
+                        }
+
+                        // array lengths are checked and added to the div
                         $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
+                    // if the user clicks the wrong answer it adds it to a separate empty array
                     else if (questionOneValue !== "1963" && incorrectAnswers.indexOf("q1") < 0) {
+                        // incorrect click is pushed to the incorrectAnswers array
                         incorrectAnswers.push("q1");
-                        correctAnswers.delete("q1");
+                        // correct click is removed from the correctAnswers array
+                        correctAnswers.splice("q1");
+                        // array lengths are checked and added to the div
+                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                    }
+                });
+                $('.q-two-answer-options').click(function() {
+                    // checks the value of the input click
+                    var questionTwoValue = $('input[name="q2"]:checked').val();
+                    // if the user clicked the correct answer it adds it to an empty array
+                    if (questionTwoValue === "The Castle of Cagliostro" && correctAnswers.indexOf("q2") < 0) {
+                        // correct answer pushed to correctAnswers empty array
+                        correctAnswers.push("q2");
+                        // incorrect click is removed from the incorrectAnswers array
+                        incorrectAnswers.splice("q2");
+                        // array lengths are checked and added to the div
+                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                    }
+                    // if the user clicks the wrong answer it adds it to a separate empty array
+                    else if (questionTwoValue !== "The Castle of Cagliostro" && incorrectAnswers.indexOf("q2") < 0) {
+                        // incorrect click is pushed to the incorrectAnswers array
+                        incorrectAnswers.push("q2");
+                        // correct click is removed from the correctAnswers array
+                        correctAnswers.splice("q2");
+                        // array lengths are checked and added to the div
+                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
                         $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
                 });
