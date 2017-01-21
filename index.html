@@ -1,87 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>TRIVIA GAME</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="assets/javascript/app.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Candal|Comfortaa|Concert+One|Days+One|Heebo" rel="stylesheet">
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>TRIVIA GAME</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Candal|Comfortaa|Concert+One|Days+One|Heebo" rel="stylesheet">
 </head>
-  <body>
 
-    <!-- game title -->
-    <div class="title">
-      <h1>HAYAO MIYAZAKI TRIVIA</h1>
-    </div>
+<body>
+	<div class="container">
+		<div class="row">
+			<!-- game title -->
+			<div class="title text-left">
+				<h1>HAYAO MIYAZAKI TRIVIA</h1>
+			</div>
+		</div>
 
-    <!-- start button -->
-    <div class="start-button">
-      <button>CLICK TO START</button>
-    </div>
+		<!-- start button -->
+		<div class="start-button">
+			<button>CLICK TO START</button>
+		</div>
 
-    <!-- countdown timer -->
-    <div class="count-down">TIME REMAINING :</div>
+		<!-- countdown timer -->
+		<div class="count-down">TIME REMAINING :</div>
 
-    <!-- trivia questions -->
-    <div class="all-questions">
-      <div class="question-one">What year did Miyazaki begin his animation career?
-      </div>
-        <div class="q-one-answer-options">
-          <form>
-            <input type="radio" value="1972" name="q1" checked>1972</input>
-            <input type="radio" value="1963" name="q1">1963</input>
-            <input type="radio" value="1968" name="q1">1968</input>
-            <input type="radio" value="1959" name="q1">1959</input>
-          </form>
-        </div>
-      <div class="question-two">What was Miyazaki's first feature length film?
-      </div>
-        <div class="q-two-answer-options">
-          <form>
-            <input type="radio" value="My Neighbor Totoro" name="q2" checked>My Neighbor Totoro</input>
-            <input type="radio" value="Spirited Away" name="q2">Spirited Away</input>
-            <input type="radio" value="The Castle of Cagliostro" name="q2">The Castle of Cagliostro</input>
-            <input type="radio" value="Porco Rosso" name="q2">Porco Rosso</input>
-          </form>
-        </div>
-      <div class="question-three">Which Miyazaki film won Best Picture at the Academy Awards?
-      </div>
-        <div class="q-three-answer-options">
-          <form>
-            <input type="radio" value="Spirited Away" name="q3" checked>Spirited Away</input>
-            <input type="radio" value="Howl's Moving Castle" name="q3">Howl's Moving Castle</input>
-            <input type="radio" value="My Neighbor Totoro" name="q3">My Neighbor Totoro</input>
-            <input type="radio" value="The Wind Rises" name="q3">The Wind Rises</input>
-          </form>
-        </div>
-      <div class="question-four">What other form of art is Miyazaki passionate about?
-      </div>
-        <div class="q-four-answer-options">
-          <form>
-            <input type="radio" value="Painting" name="q4" checked>Painting</input>
-            <input type="radio" value="Photography" name="q4">Photography</input>
-            <input type="radio" value="Dance" name="q4">Dance</input>
-            <input type="radio" value="Manga" name="q4">Manga</input>
-          </form>
-        </div>
-    </div>
+		<!-- trivia questions -->
+		<div class="all-questions">
+			<div class="question-one">What year did Miyazaki begin his animation career?
+			</div>
+			<div class="q-one-answer-options">
+				<form>
+					<input type="radio" value="1972" name="q1" checked>1972</input>
+					<input type="radio" value="1963" name="q1">1963</input>
+					<input type="radio" value="1968" name="q1">1968</input>
+					<input type="radio" value="1959" name="q1">1959</input>
+				</form>
+			</div>
+			<div class="question-two">What was Miyazaki's first feature length film?
+			</div>
+			<div class="q-two-answer-options">
+				<form>
+					<input type="radio" value="My Neighbor Totoro" name="q2" checked>My Neighbor Totoro</input>
+					<input type="radio" value="Spirited Away" name="q2">Spirited Away</input>
+					<input type="radio" value="The Castle of Cagliostro" name="q2">The Castle of Cagliostro</input>
+					<input type="radio" value="Porco Rosso" name="q2">Porco Rosso</input>
+				</form>
+			</div>
+			<div class="question-three">Which Miyazaki film won Best Picture at the Academy Awards?
+			</div>
+			<div class="q-three-answer-options">
+				<form>
+					<input type="radio" value="Spirited Away" name="q3" checked>Spirited Away</input>
+					<input type="radio" value="Howl's Moving Castle" name="q3">Howl's Moving Castle</input>
+					<input type="radio" value="My Neighbor Totoro" name="q3">My Neighbor Totoro</input>
+					<input type="radio" value="The Wind Rises" name="q3">The Wind Rises</input>
+				</form>
+			</div>
+			<div class="question-four">What other form of art is Miyazaki passionate about?
+			</div>
+			<div class="q-four-answer-options">
+				<form>
+					<input type="radio" value="Painting" name="q4" checked>Painting</input>
+					<input type="radio" value="Photography" name="q4">Photography</input>
+					<input type="radio" value="Dance" name="q4">Dance</input>
+					<input type="radio" value="Manga" name="q4">Manga</input>
+				</form>
+			</div>
+		</div>
 
-    <!-- Time's up text -->
-    <div class="times-up">
-      TIME'S UP!
-    </div>
+		<!-- Time's up text -->
+		<div class="times-up">
+			TIME'S UP!
+		</div>
 
-    <!-- correct and incorrect answer counts at the end of the game -->
-    <div class="answers-page">
-      <div class="correct-answers">
-        CORRECT ANSWERS:
-      </div>
-      <div class="incorrect-answers">
-        INCORRECT ANSWERS:
-      </div>
-    </div>
+		<!-- correct and incorrect answer counts at the end of the game -->
+		<div class="answers-page">
+			<div class="correct-answers">
+				CORRECT ANSWERS:
+			</div>
+			<div class="incorrect-answers">
+				INCORRECT ANSWERS:
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery library (necessary for Bootstrap & other JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified bootstrap javascript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- Javascript file connection -->
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+	<!-- Backstretch Plug In -->
+	<script type="text/javascript" src="assets/javascript/backstretch_plugin.min.js"></script>
+	<!-- backstretch jquery -->
+	<script type="text/javascript" src="assets/javascript/backstretch.js"></script>
 
 
-  </body>
+</body>
+
 </html>
