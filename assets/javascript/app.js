@@ -16,30 +16,30 @@ var incorrectAnswers = [];
 
 $(document).ready(function() {
     // Trivia questions are hidden upon first page load
-    $('.all-questions').hide();
-    $('.count-down').hide();
-    $('.answers-page').hide();
-    $('.times-up').hide();
+    $('#all-questions').hide();
+    $('#count-down').hide();
+    $('#answers-page').hide();
+    $('#times-up').hide();
 
     // Function for when the user clicks the 'start' button
-    $('.start-button').click(function() {
+    $('#start-button').click(function() {
         // 'Start' button is now hidden and trivia is shown
         $('button').fadeOut(500);
-        $('.all-questions').fadeIn(1000);
-        $('.count-down').fadeIn(1000);
+        $('#all-questions').fadeIn(1000);
+        $('#count-down').fadeIn(1000);
         // 'Counter' starts on click and counts down
             var countDown = setInterval(function() {
-                $('.count-down').text("TIME REMAINING :" + timeLeft--);
+                $('#count-down').text("TIME REMAINING :" + timeLeft--);
                 if (timeLeft === 0) {
                     clearInterval(countDown);
                     // Questions elements fade out and answers fade in
-                    $('.all-questions').fadeOut(1000);
-                    $('.count-down').fadeOut(1000);
-                    $('.answers-page').fadeIn(1000);
-                    $('.times-up').fadeIn(1000);
+                    $('#all-questions').fadeOut(1000);
+                    $('#count-down').fadeOut(1000);
+                    $('#answers-page').fadeIn(1000);
+                    $('#times-up').fadeIn(1000);
                 }
                 // User clicks their answer and it's value is returned
-                $('.q-one-answer-options').click(function() {
+                $('#q-one-answer-options').click(function() {
                     // checks the value of the input click
                     var questionOneValue = $('input[name="q1"]:checked').val();
                     // if the user clicked the correct answer it adds it to an empty array
@@ -54,8 +54,8 @@ $(document).ready(function() {
                             incorrectAnswers.splice(incorrectIndex, 1);
                         }
                         // array lengths are checked and added to the div
-                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
-                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                        $('#correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('#incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
                     // if the user clicks the wrong answer it adds it to a separate empty array
                     else if (questionOneValue !== "1963" && incorrectAnswers.indexOf("q1") < 0) {
@@ -68,12 +68,12 @@ $(document).ready(function() {
                             correctAnswers.splice(correctIndex, 1);
                         }
                         // array lengths are checked and added to the div
-                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
-                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                        $('#correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('#incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
                 });
                 // User clicks their answer and it's value is returned
-                $('.q-two-answer-options').click(function() {
+                $('#q-two-answer-options').click(function() {
                     // checks the value of the input click
                     var questionTwoValue = $('input[name="q2"]:checked').val();
                     // if the user clicked the correct answer it adds it to an empty array
@@ -88,8 +88,8 @@ $(document).ready(function() {
                             incorrectAnswers.splice(incorrectIndex, 1);
                         }
                         // array lengths are checked and added to the div
-                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
-                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                        $('#correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('#incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
                     // if the user clicks the wrong answer it adds it to a separate empty array
                     else if (questionTwoValue !== "The Castle of Cagliostro" && incorrectAnswers.indexOf("q2") < 0) {
@@ -102,12 +102,12 @@ $(document).ready(function() {
                             correctAnswers.splice(correctIndex, 1);
                         }
                         // array lengths are checked and added to the div
-                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
-                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                        $('#correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('#incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
                 });
                 // User clicks their answer and it's value is returned
-                $('.q-three-answer-options').click(function() {
+                $('#q-three-answer-options').click(function() {
                     // checks the value of the input click
                     var questionThreeValue = $('input[name="q3"]:checked').val();
                     // if the user clicked the correct answer it adds it to an empty array
@@ -122,8 +122,8 @@ $(document).ready(function() {
                             incorrectAnswers.splice(incorrectIndex, 1);
                         }
                         // array lengths are checked and added to the div
-                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
-                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                        $('#correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('#incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
                     // if the user clicks the wrong answer it adds it to a separate empty array
                     else if (questionThreeValue !== "Spirited Away" && incorrectAnswers.indexOf("q3") < 0) {
@@ -136,12 +136,12 @@ $(document).ready(function() {
                             correctAnswers.splice(correctIndex, 1);
                         }
                         // array lengths are checked and added to the div
-                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
-                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                        $('#correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('#incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
                 });
                 // User clicks their answer and it's value is returned
-                $('.q-four-answer-options').click(function() {
+                $('#q-four-answer-options').click(function() {
                     // checks the value of the input click
                     var questionFourValue = $('input[name="q4"]:checked').val();
                     // if the user clicked the correct answer it adds it to an empty array
@@ -156,8 +156,8 @@ $(document).ready(function() {
                             incorrectAnswers.splice(incorrectIndex, 1);
                         }
                         // array lengths are checked and added to the div
-                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
-                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                        $('#correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('#incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
                     // if the user clicks the wrong answer it adds it to a separate empty array
                     else if (questionFourValue !== "Manga" && incorrectAnswers.indexOf("q4") < 0) {
@@ -170,8 +170,8 @@ $(document).ready(function() {
                             correctAnswers.splice(correctIndex, 1);
                         }
                         // array lengths are checked and added to the div
-                        $('.correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
-                        $('.incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
+                        $('#correct-answers').text("CORRECT ANSWERS: " + correctAnswers.length);
+                        $('#incorrect-answers').text("INCORRECT ANSWERS: " + incorrectAnswers.length);
                     }
                 });
             }, 1000);
