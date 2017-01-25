@@ -14,9 +14,9 @@ font-family: 'Heebo', sans-serif;*/
 
 button {
     font-family: 'Candal', sans-serif;
-    height: 300px;
-    width: 300px;
-    font-size: 48px;
+    height: 200px;
+    width: 200px;
+    font-size: 30px;
     letter-spacing: 2px;
     border-radius: 50%;
     border: none;
@@ -27,7 +27,8 @@ button {
 }
 
 form {
-	padding: 25px;
+	padding-left: 25px;
+	padding-right: 25px;
 }
 
 #count-down {
@@ -46,54 +47,50 @@ form {
     font-size: 24px;
     margin-top: 40px;
     margin-bottom: 200px;
-    padding-bottom: 60px;
+	padding-top: 40px;
+    padding-bottom: 40px;
 }
 /*radio button */
 input[type=radio] {
 	height:35px;
 	width:35px;
 	vertical-align: middle;
-	margin: 0px 20px 1px;
+	margin: 10px -15px 10px 15px;
 }
 
 #question-one {
-    margin-top: 50px;
-	font-size: 40px;
+	font-size: 32px;
 }
 
 #q-one-answer-options {
-    margin-top: 10px;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #question-two {
-	margin-top: 50px;
-	font-size: 40px;
+	margin-top: 40px;
+	font-size: 32px;
 }
 
 #q-two-answer-options {
-	margin-top: 10px;
-    font-size: 30px;
+	font-size: 20px;
 }
 
 #question-three {
-	margin-top: 50px;
-	font-size: 40px;
+	margin-top: 40px;
+	font-size: 32px;
 }
 
 #q-three-answer-options {
-	margin-top: 10px;
-    font-size: 30px;
+	font-size: 20px;
 }
 
 #question-four {
-	margin-top: 50px;
-	font-size: 40px;
+	margin-top: 40px;
+	font-size: 32px;
 }
 
 #q-four-answer-options {
-	margin-top: 10px;
-    font-size: 30px;
+	font-size: 20px;
 }
 
 #answers-page {
@@ -108,7 +105,7 @@ input[type=radio] {
 #times-up {
     font-family: 'Candal', sans-serif;
     font-size: 80px;
-    margin-top: 150px;
+    margin-top: 100px;
     color: white;
     text-shadow: 0px 0px 2px black;
 }
