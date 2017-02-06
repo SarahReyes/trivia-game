@@ -10,7 +10,7 @@
 
 
 // use .hide() and .show() for each "page"?
-var timeLeft = 555;
+var timeLeft = 30;
 var correctAnswers = [];
 var incorrectAnswers = [];
 
